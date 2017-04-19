@@ -1,1 +1,40 @@
-{     "devDependencies": {         "homebridge-openhab": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-homebridge-openhab",     "homepage": "https://github.com/npmtest/node-npmtest-homebridge-openhab",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-homebridge-openhab.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### test coverage for  [homebridge-openhab (v0.1.31)](https://github.com/tommasomarchionni/homebridge-openHAB#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-homebridge-openhab.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-homebridge-openhab) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-homebridge-openhab.svg)](https://travis-ci.org/npmtest/node-npmtest-homebridge-openhab)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "homebridge-openhab": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-homebridge-openhab",
+    "keywords": [
+        "coverage",
+        "test",
+        "homebridge-openhab"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_homebridge_openhab.js",
+    "name": "npmtest-homebridge-openhab",
+    "nameAlias": "npmtest_homebridge_openhab",
+    "nameOriginal": "npmtest-homebridge-openhab",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-homebridge-openhab.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
